@@ -9,9 +9,9 @@ The code was done in python 3.9, and the following packages are required to run 
 - pandas
 - seaborn
 
-To see the exact versions of the packages used during our simulations, refer to the conda_environment.txt file. Note that while the code should run with the latest versions of these packages, the results might be different.
+To see the exact versions of the packages used during our simulations, refer to the anaconda_environment.txt and anaconda_environment.yml files. For information on how to use these files, see [this link on managing anaconda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). Note that the anaconda_environment.txt file is OS-specific (made with Linux), while the anaconda_environment.yml is not. Depending on the operating system, the yml method might not be able to reproduce the exact version numbers as used in our system. The code should run with the latest versions of these packages too, but the results might be different.
 
-Due to recent changes in seaborn, versions older than 0.12 will throw an error.
+Due to recent changes in seaborn, versions older than 0.12 will raise an exception and cannot be used.
 
 ## Executing the code
 The file figures.py contains all the functions necessary to reproduce all the simulations and figures in the manuscript. Note, however, that only the simulated data is plotted by this functions; all experimental results were added after plotting using inkscape.
