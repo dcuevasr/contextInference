@@ -6,6 +6,9 @@ parameter --fignum-- for each function defined here determines which figure it
 is in the paper. Those that do not have one are not paper figures, but
 auxiliary functions."""
 
+import logging
+import warnings
+
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
@@ -24,6 +27,10 @@ mpl.rcParams['font.size'] = 8
 mpl.rcParams['figure.titlesize'] = 'small'
 mpl.rcParams['lines.linewidth'] = 1
 
+# np.seterr(all='ignore')
+warnings.filterwarnings('ignore')
+
+logging.getLogger().setLevel(logging.ERROR)
 
 def model_showoff(fignum=2, show=True, do_a=True, save=False):
     """Plots a bunch of arbitrary simulations that show how the parameters of
@@ -663,3 +670,6 @@ if __name__ == '__main__':
     oh_2019_kim_2015()
     davidson_2004()
     vaswani_2013()
+    print('Close all figure windows to end the program')
+    plt.show(block=True)
+    
