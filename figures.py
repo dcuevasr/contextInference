@@ -8,6 +8,7 @@ auxiliary functions."""
 
 import logging
 import warnings
+import argparse
 
 import numpy as np
 from matplotlib import pyplot as plt
@@ -356,7 +357,6 @@ def davidson_2004(fignum=4, show=True, save=False):
     subplot to put in the results from their paper.
 
     """
-    supp_fignum = f's{fignum}'
     repeats = 32  # No. of participants per group
     figsize = (6, 4)
     colors = [np.array((95, 109, 212)) / 256,
@@ -366,8 +366,6 @@ def davidson_2004(fignum=4, show=True, save=False):
     ran = [161, 200]  # Trials of importance for this figure
 
     fig = plt.figure(num=fignum, clear=True, figsize=figsize)
-    fig_supp, ax_supp = plt.subplots(3, 1, num=supp_fignum, clear=True, sharex=True, squeeze=False)
-    
     gsbig = gs.GridSpec(2, 1, figure=fig, height_ratios=[1.5, 1], hspace=0.4)
     gstop = gsbig[0].subgridspec(2, 4, width_ratios=[1, 0.25, 2, 2],
                                  wspace=0.05)
